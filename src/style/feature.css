@@ -1,3 +1,4 @@
+
 .text-muted{
     color: #9d9d9d;
 }
@@ -45,4 +46,20 @@
 }
 /* ////////////////////// */
 
+/* DETAILS */
+.details{
+    gap: 1rem;
+}
 
+.wind, .rain, .pressure {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wind_speed svg,
+.rain_speed svg,
+.pressure_speed svg{
+    width: 30px;
+    height: 30px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Summary() {
   return (
     <div className="summary">
@@ -146,20 +147,20 @@ function Summary() {
             </div>
 
             <div className="dropdown">
-              <button className="dropbtn" onclick="toggleDropdown()">
+              <button className="dropbtn" >
                 Today
                 <span className="dropdown-icon">
                   <i className="fa-solid fa-caret-down"></i>
                 </span>
               </button>
               <div className="dropdown-content" id="myDropdown">
-                <a href="#" onclick="selectItem('Item 1')">
+                <a href="#">
                   Item 1
                 </a>
-                <a href="#" onclick="selectItem('Item 2')">
+                <a href="#">
                   Item 2
                 </a>
-                <a href="#" onclick="selectItem('Item 3')">
+                <a href="#">
                   Item 3
                 </a>
               </div>
