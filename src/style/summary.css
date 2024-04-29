@@ -1,0 +1,267 @@
+.summary {
+    padding: var(--p-2);
+}
+
+
+.wrapper {
+    flex-direction: column;
+    margin-top: var(--m-3);
+    margin-bottom: var(--m-1);
+    margin-inline: var(--m-1);
+    gap: 2rem;
+}
+
+.app {
+    justify-content: space-between;
+}
+
+.app--title {
+    letter-spacing: 1px;
+    font-size: var(--FF_l);
+    font-weight: bolder;
+}
+
+/* Search BOX */
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: var(--FF);
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--txt-clr-400);
+    padding-right: 40px;
+    color: black;
+
+    box-shadow: 10px 10px 29px -16px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 29px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 29px -16px rgba(0, 0, 0, 0.75);
+
+}
+
+.input-search::placeholder {
+    color: var(--txt-clr-800);
+    font-size: var(--FF);
+    letter-spacing: 2px;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: black;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:focus~.input-search {
+    width: 250px;
+    background-color: transparent;
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.input-search:focus {
+    width: 250px;
+    background-color: transparent;
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+/* /////////////////////// */
+
+/* FOR THE NAVS and TABS */
+/*
+ CSS for the main interaction
+*/
+.tabset>input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+}
+
+.tabset .tab-panel {
+    display: none;
+}
+
+.tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+.tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+.tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+.tabset>input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4),
+.tabset>input:nth-child(9):checked~.tab-panels>.tab-panel:nth-child(5),
+.tabset>input:nth-child(11):checked~.tab-panels>.tab-panel:nth-child(6) {
+    display: block;
+}
+
+
+.tabset>label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tabset>label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+}
+
+input:focus-visible+label {
+    outline: 2px solid rgba(0, 102, 204, 1);
+    border-radius: 3px;
+}
+
+.tabset>label:hover,
+.tabset>input:focus+label,
+.tabset>input:checked+label {
+    color: #06c;
+}
+
+.tabset>label:hover::after,
+.tabset>input:focus+label::after,
+.tabset>input:checked+label::after {
+    background: #06c;
+}
+
+.tabset>input:checked+label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+
+.tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid var(--txt-clr-800);
+}
+
+/* ////////////////////////// */
+
+.forecast--container{
+    flex-direction: column;
+    gap: var(--FF_md);
+}
+
+
+.forecast--wrapper{
+    justify-content: space-between;
+}
+.days{
+    font-weight: 600;
+}
+
+.high_low_temp{
+    gap: var(--FF_xs);
+}
+
+.high_low_temp > p{
+    color: var(--txt-clr-500);
+}
+
+.bar{
+    width: 170px; /* Adjust the width of each block */
+    background-color: var(--clr-400); /* Color of the blocks */
+    border-radius: 25px;
+}
+
+.high_temp{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: var(--clr-700);
+}
+/* ////////////////////////////////////// */
+
+
+/* FOR CHARTS */
+
+/* container for the charts  */
+.weather--chart{
+    flex-direction: column;
+
+    width: 100%;
+    padding: 20px 25px;
+
+    border-radius: 30px;
+    -webkit-box-shadow: -7px 11px 45px -32px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 11px 45px -32px rgba(0,0,0,0.75);
+    box-shadow: -7px 11px 45px -32px rgba(0,0,0,0.75);
+}   
+
+.chart--header{
+    justify-content: space-between;
+}
+
+/* FOR DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.dropdown-icon{
+    margin-left: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+    background-color: var(--txt-clr-400);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--txt-clr-800);
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+/* //////////// */
+/* CHARTS */
+.chart--body{
+    width:calc(100% - 40px);
+}
+
+.forecast--chart{
+    width: 100% !important;
+    max-width: inherit !important;
+    margin: 0 auto;
+}
+
+/* /////////////////////////////////////// */

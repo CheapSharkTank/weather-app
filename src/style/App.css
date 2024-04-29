@@ -1,0 +1,77 @@
+:root{
+    /* BG COLORS */
+    --clr-bg: #83b7f1;
+    --clr-light-400: #f2fbff; 
+    --clr-dark-800: #11103a;
+
+
+    /* FONT SIZE */
+    --FF_xs: 0.6rem;
+    --FF_sm: 0.7rem;
+
+    --FF: 1rem;
+    --FF_md: 1.5rem;
+
+    --FF_l: 2rem;
+    --FF_xl: 2.5rem;
+    --FF_xxl: 3rem;
+    
+    /* Icon Colours */
+    --icon-clr-400: #b8ddf7;
+    --icon-clr-600: #4097e5;
+    --icon-clr-neutral: #aee903;
+    --icon-clr-800: #1e1d45;
+
+    /* Text Color */
+    --txt-clr-400: #feffff;
+    --txt-clr-500: #a2a2c6;
+    --txt-clr-600: #a4acd0;
+    --txt-clr-neutral: #9fb77b;
+    --txt-clr-800: #000;
+
+
+    /* Colorsh */
+    --clr-400: #d5e4f7;
+    --clr-700: #cf3404;
+
+    /* Padding */
+    --p-1: 10px;
+    --p-2: 15px;
+
+
+
+    /* Margin */
+    --m-1: 15px;
+    --m-3: 30px;
+    --m-5: 50px;
+
+}
+
+/* /////////////////////////// */
+.flex{
+    display: flex;
+}
+
+.container{
+    margin: var(--m-1);
+
+    width: calc(100vw - 30px); /* Assuming 10px padding on each side */
+    max-width: 1300px;
+    min-width: 294px;
+    min-height: 100px;
+    
+    background-color: var(--clr-light-400);
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+}
+
+.summary{
+    width: 65%;
+    flex-grow: 1;
+}
+.feature{
+    width: 35%;
+    flex-shrink: 1;
+}
+
