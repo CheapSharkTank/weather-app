@@ -103,24 +103,9 @@ function Feature() {
               <div className="stick"></div>
               <p className="time--stamp">10am</p>
             </div>
-
-
-          
           </div>
-
-
-
         </div>
-
-
-
       </div>
-
-
-
-
-
-
     </div>
   );
 }
