@@ -70,6 +70,56 @@ function Feature() {
 
       </div>
 
+      {/* Chances of rain */}
+
+      <div className="rain--chances flex">
+        <p style={{fontSize: "0.9rem", textAlign : "center"}}> Chance of Rain</p>
+
+        <div className="rain--chart grid">
+          <div className="category flex">
+            <p>heavy rain</p>
+            <p>rainy</p>
+            <p>sunny</p>
+          </div>
+
+          <div className="percent--chart flex">
+            <div className="stick--container flex">
+              <p className="rain--percent">54%</p>
+              <div className="stick"></div>
+              <p className="time--stamp">10am</p>
+            </div>
+            <div className="stick--container flex">
+              <p className="rain--percent">54%</p>
+              <div className="stick"></div>
+              <p className="time--stamp">10am</p>
+            </div>
+            <div className="stick--container flex">
+              <p className="rain--percent">54%</p>
+              <div className="stick"></div>
+              <p className="time--stamp">10am</p>
+            </div>
+            <div className="stick--container flex">
+              <p className="rain--percent">54%</p>
+              <div className="stick"></div>
+              <p className="time--stamp">10am</p>
+            </div>
+
+
+          
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
 
     </div>
   );

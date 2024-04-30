@@ -5,11 +5,10 @@
 
 .feature{
     color: var(--txt-clr-400);
-    padding: 35px 25px;
+    padding: 35px 25px; /* Change when making rasponsive */
 
-    gap: 35px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--clr-dark-800);
 }
@@ -32,13 +31,13 @@
 
 .temp{
     text-align: center;
-    font-size: 5rem;
+    font-size: 5rem; /* Change when making rasponsive */
     font-weight: 100;
 }
 
 .metric{
     font-weight: normal;
-    font-size: var(--FF_md);
+    font-size: var(--FF_md); /* Change when making rasponsive */
 }
 
 .place{
@@ -60,6 +59,66 @@
 .wind_speed svg,
 .rain_speed svg,
 .pressure_speed svg{
-    width: 30px;
-    height: 30px;
+    width: 30px;  /* Change when making rasponsive */
+    height: 30px; /* Change when making rasponsive */
 }
+
+
+/* ///////////////////////////////////// */
+/* Chances of rain */
+.rain--chances, .category, .stick--container{
+    flex-direction: column;
+}
+
+
+.rain--chances{
+    width: 100%;
+    text-align: start;
+
+    gap: var(--FF);
+}
+
+
+.rain--chart{
+    grid-template-columns:  40% 60%;
+    grid-template-areas: 
+    "sidebar main"
+
+}
+
+.category{
+    grid-area: sidebar;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.75rem; /* Change when making responsive */
+}
+
+.percent--chart{
+    grid-area: main;
+    justify-content: space-between;
+    align-items: end;
+
+    .stick--container{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .stick{
+            width: 15px;
+            height: 100px; /* This value will be given in js */
+            border-radius: 10px;
+            background-color: var(--stick-rainy-clr); /* This value will be given in js */
+        }
+
+        .rain--percent, .time--stamp{
+            font-size: var(--FF_sm);
+        }
+    }
+
+
+}
+
+

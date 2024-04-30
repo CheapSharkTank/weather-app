@@ -34,6 +34,9 @@
     --clr-400: #d5e4f7;
     --clr-700: #cf3404;
 
+    --stick-rainy-clr: #2d2e62;
+    --stick-sunny-clr: #eab90d;
+
     /* Padding */
     --p-1: 10px;
     --p-2: 15px;
@@ -50,6 +53,10 @@
 /* /////////////////////////// */
 .flex{
     display: flex;
+}
+
+.grid{
+    display: grid;
 }
 
 .container{

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Summary() {
   return (
     <div className="summary">
@@ -21,117 +20,63 @@ function Summary() {
           </div>
         </div>
 
-        <div className="tabset">
-          <input
-            type="radio"
-            name="tabset"
-            id="tab1"
-            aria-controls="week"
-            checked
-          />
-          <label for="tab1">Week</label>
-          <input type="radio" name="tabset" id="tab2" aria-controls="month" />
-          <label for="tab2">Month</label>
-
-          <input
-            type="radio"
-            name="tabset"
-            id="tab3"
-            aria-controls="3-months"
-          />
-          <label for="tab3">3 Months</label>
-
-          <div className="tab-panels">
-            <section id="week" className="tab-panel">
-              <div className="forecast--container flex">
-                <div className="forecast--wrapper flex">
-                  <div className="days">Sunday</div>
-                  <div className="rain_percent">54%</div>
-                  <div className="weather_icon_forecast">Weather Icon</div>
-                  <div className="high_low_temp flex">
-                    <p>15&deg;C</p>
-                    <div className="bar flex">
-                      <div
-                        className="low_temp"
-                        style={{ width: "120px" }}
-                      ></div>
-                      <div
-                        className="high_temp"
-                        style={{ width: "50px" }}
-                      ></div>
-                    </div>
-                    <p>19&deg;C</p>
-                  </div>
-                </div>
-                <div className="forecast--wrapper flex">
-                  <div className="days">Sunday</div>
-                  <div className="rain_percent">54%</div>
-                  <div className="weather_icon_forecast">Weather Icon</div>
-                  <div className="high_low_temp flex">
-                    <p>15&deg;C</p>
-                    <div className="bar flex">
-                      <div
-                        className="low_temp"
-                        style={{ width: "120px" }}
-                      ></div>
-                      <div
-                        className="high_temp"
-                        style={{ width: "50px" }}
-                      ></div>
-                    </div>
-                    <p>19&deg;C</p>
-                  </div>
-                </div>
-                <div className="forecast--wrapper flex">
-                  <div className="days">Sunday</div>
-                  <div className="rain_percent">54%</div>
-                  <div className="weather_icon_forecast">Weather Icon</div>
-                  <div className="high_low_temp flex">
-                    <p>15&deg;C</p>
-                    <div className="bar flex">
-                      <div
-                        className="low_temp"
-                        style={{ width: "120px" }}
-                      ></div>
-                      <div
-                        className="high_temp"
-                        style={{ width: "50px" }}
-                      ></div>
-                    </div>
-                    <p>19&deg;C</p>
-                  </div>
-                </div>
-                <div className="forecast--wrapper flex">
-                  <div className="days">Sunday</div>
-                  <div className="rain_percent">54%</div>
-                  <div className="weather_icon_forecast">Weather Icon</div>
-                  <div className="high_low_temp flex">
-                    <p>15&deg;C</p>
-                    <div className="bar flex">
-                      <div
-                        className="low_temp"
-                        style={{ width: "120px" }}
-                      ></div>
-                      <div
-                        className="high_temp"
-                        style={{ width: "50px" }}
-                      ></div>
-                    </div>
-                    <p>19&deg;C</p>
-                  </div>
-                </div>
+        <div className="tabset flex">
+          <div className="forecast--wrapper flex">
+            <div className="days">Sunday</div>
+            <div className="rain_percent">54%</div>
+            <div className="weather_icon_forecast">Weather Icon</div>
+            <div className="high_low_temp flex">
+              <p>15&deg;C</p>
+              <div className="bar flex">
+                <div className="low_temp" style={{ width: "120px" }}></div>
+                <div className="high_temp" style={{ width: "50px" }}></div>
               </div>
-            </section>
-
-            <section id="month" className="tab-panel">
-              <h2>Monthly Forecast</h2>
-            </section>
-
-            <section id="3-months" className="tab-panel">
-              <h2>3 Month Forecast</h2>
-            </section>
+              <p>19&deg;C</p>
+            </div>
           </div>
+          <div className="forecast--wrapper flex">
+            <div className="days">Sunday</div>
+            <div className="rain_percent">54%</div>
+            <div className="weather_icon_forecast">Weather Icon</div>
+            <div className="high_low_temp flex">
+              <p>15&deg;C</p>
+              <div className="bar flex">
+                <div className="low_temp" style={{ width: "120px" }}></div>
+                <div className="high_temp" style={{ width: "50px" }}></div>
+              </div>
+              <p>19&deg;C</p>
+            </div>
+          </div>
+          <div className="forecast--wrapper flex">
+            <div className="days">Sunday</div>
+            <div className="rain_percent">54%</div>
+            <div className="weather_icon_forecast">Weather Icon</div>
+            <div className="high_low_temp flex">
+              <p>15&deg;C</p>
+              <div className="bar flex">
+                <div className="low_temp" style={{ width: "120px" }}></div>
+                <div className="high_temp" style={{ width: "50px" }}></div>
+              </div>
+              <p>19&deg;C</p>
+            </div>
+          </div>
+          <div className="forecast--wrapper flex">
+            <div className="days">Sunday</div>
+            <div className="rain_percent">54%</div>
+            <div className="weather_icon_forecast">Weather Icon</div>
+            <div className="high_low_temp flex">
+              <p>15&deg;C</p>
+              <div className="bar flex">
+                <div className="low_temp" style={{ width: "120px" }}></div>
+                <div className="high_temp" style={{ width: "50px" }}></div>
+              </div>
+              <p>19&deg;C</p>
+            </div>
+          </div>
+
+
         </div>
+
 
         <div className="weather--chart flex">
           <div className="chart--header flex">
@@ -147,22 +92,16 @@ function Summary() {
             </div>
 
             <div className="dropdown">
-              <button className="dropbtn" >
+              <button className="dropbtn">
                 Today
                 <span className="dropdown-icon">
                   <i className="fa-solid fa-caret-down"></i>
                 </span>
               </button>
               <div className="dropdown-content" id="myDropdown">
-                <a href="#">
-                  Item 1
-                </a>
-                <a href="#">
-                  Item 2
-                </a>
-                <a href="#">
-                  Item 3
-                </a>
+                <a href="#">Item 1</a>
+                <a href="#">Item 2</a>
+                <a href="#">Item 3</a>
               </div>
             </div>
           </div>
