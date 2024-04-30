@@ -108,7 +108,6 @@
 
         .stick{
             width: 15px;
-            height: 100px; /* This value will be given in js */
             border-radius: 10px;
             background-color: var(--stick-rainy-clr); /* This value will be given in js */
         }

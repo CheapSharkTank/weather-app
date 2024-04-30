@@ -1,5 +1,7 @@
 import { openWeatherApi, weatherApi } from "./APIs";
 
+
+// Open Weather API --- Fetches only current weather data
 async function fetchDataFromOpenWeatherApi(cityName) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${openWeatherApi}&units=metric`);
@@ -10,7 +12,7 @@ async function fetchDataFromOpenWeatherApi(cityName) {
     return null;
   }
 }
-
+// Weather API --- Fetches only current weather data
 async function fetchDataFromWeatherAPI(cityName) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${weatherApi}&q=${cityName}`);
@@ -21,7 +23,7 @@ async function fetchDataFromWeatherAPI(cityName) {
     return null;
   }
 }
-
+// Weather API --- Fetches only current hourly weather data
 async function fetchHourlyForecastFromWeatherAPI(cityName) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApi}&q=${cityName}&days=1&aqi=no&alerts=no`);
@@ -32,7 +34,7 @@ async function fetchHourlyForecastFromWeatherAPI(cityName) {
     return null;
   }
 }
-
+// Weather API --- Fetches only 4 day weather data
 async function fetchFourDayForecastFromWeatherAPI(cityName) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApi}&q=${cityName}&days=4&aqi=no&alerts=no`);
@@ -44,7 +46,7 @@ async function fetchFourDayForecastFromWeatherAPI(cityName) {
   }
 }
 
-export async function fetchDataFromBothAPIs(cityName) {
+export async function fetchDataFromAPIs(cityName) {
   try {
     const [openWeatherData, weatherAPIData, hourlyForecast, fourDayForecast] = await Promise.all([
       fetchDataFromOpenWeatherApi(cityName),

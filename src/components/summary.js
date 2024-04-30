@@ -1,6 +1,23 @@
 import React from "react";
 
-function Summary() {
+function Summary(props) {
+  const [searchInput, setSearchInput] = React.useState("");
+
+  const handleInputChange = React.useCallback((e) => {
+    setSearchInput(e.target.value)
+  }, [])
+
+  const handleKeyDown = React.useCallback((e) => {
+    if (e.key === "Enter") {
+      setSearchInput("")
+      props.setQuery(e.target.value);
+      console.log(e.target.value);
+      
+    }
+  }, [props.setQuery, searchInput]);
+
+
+
   return (
     <div className="summary">
       <div className="wrapper flex">
@@ -16,6 +33,9 @@ function Summary() {
               type="text"
               className="input-search"
               placeholder="search for city..."
+              value={searchInput}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
             />
           </div>
         </div>
