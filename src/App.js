@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // importing components
 import Summary from "./components/summary";
@@ -16,6 +16,11 @@ import { fetchDataFromAPIs } from "./apiData/getWeatherData";
 function App() {
   const [query, setQuery] = React.useState("Dhaka");
   const [weather, setWeather] = React.useState(null);
+  
+  const [futureHoursData, setFutureHoursData] = useState([]);
+  const [rainChances, setRainChances] = useState([]);
+
+
 
   useEffect(() => {
     async function fetchData() {
@@ -38,12 +43,21 @@ function App() {
     <div className="container flex">
       <Feature 
         weather = {weather}
+
+        futureHoursData = {futureHoursData}
+        setFutureHoursData = {setFutureHoursData}
+
+        rainChances = {rainChances}
+        setRainChances = {setRainChances}
       />
 
       <Summary 
         query = {query}
         setQuery = {setQuery}
         weather = {weather}
+
+        futureHoursData = {futureHoursData}
+        rainChances = {rainChances}
       />
 
     </div>

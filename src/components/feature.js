@@ -1,6 +1,17 @@
 import { useState, useEffect } from "react";
 
+
+function getFormattedDate(date) {
+  const options = { weekday: 'short', day: '2-digit', month: 'short' };
+  return new Date(date).toLocaleDateString('en-US', options);
+}
+
+
 function Feature(props) {
+  const currentDate = new Date();
+  const formattedDate = getFormattedDate(currentDate);
+
+
   const [weatherState, setWeatherState] = useState({
     temp: "",
     place: "Dhaka, Bangladesh",
@@ -10,9 +21,6 @@ function Feature(props) {
     humidity: "",
     pressureIn: "",
   });
-
-  const [futureHoursData, setFutureHoursData] = useState([]);
-  const [rainChances, setRainChances] = useState([]);
 
   const formatTime = (timestamp) => {
     const date = new Date(timestamp * 1000);
@@ -44,7 +52,6 @@ function Feature(props) {
   };
 
   useEffect(() => {
-    
     if (props.weather) {
       updateWeatherState(props.weather);
 
@@ -57,7 +64,7 @@ function Feature(props) {
             return hour > currentHour;
           })
           .slice(0, 4); // Limit to 4 values or less
-        setFutureHoursData(filteredData);
+        props.setFutureHoursData(filteredData);
       }
     }
 
@@ -65,14 +72,14 @@ function Feature(props) {
 
   // CHANCES OF RAINS
   useEffect(() => {
-    if (futureHoursData.length > 0) {
-      const chances = futureHoursData.map((hourData) => ({
+    if (props.futureHoursData.length > 0) {
+      const chances = props.futureHoursData.map((hourData) => ({
         time: formatTimeHourly(hourData.time),
         chanceOfRain: hourData.chance_of_rain,
       }));
-      setRainChances(chances);
+      props.setRainChances(chances);
     }
-  }, [futureHoursData]);
+  }, [props.futureHoursData]);
   
   // Function to format time to 12-hour format for rain--chances
   const formatTimeHourly = (timeString) => {
@@ -89,7 +96,7 @@ function Feature(props) {
 
         <div className="day_date">
           <p style={{ fontSize: "1.2rem" }}>Today</p>
-          <p style={{ fontSize: "0.7rem" }}>{weatherState.currentDate}</p>
+          <p style={{ fontSize: "0.7rem" }}>{formattedDate}</p>
         </div>
       </div>
 
@@ -182,7 +189,7 @@ function Feature(props) {
           </div>
 
           <div className="percent--chart flex">
-            {rainChances.map((chance, index) => (
+            {props.rainChances.map((chance, index) => (
               <div className="stick--container flex" key={index}>
                 <p className="rain--percent">{chance.chanceOfRain}%</p>
                 <div

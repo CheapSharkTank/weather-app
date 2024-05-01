@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherICON from "./weatherICON";
+import Chart from "./chart";
 
 function dateDay(dates) {
   // Array of weekday names
@@ -26,6 +27,10 @@ function dateDay(dates) {
 
 function Summary(props) {
   const [searchInput, setSearchInput] = React.useState("");
+  const [currentMinMax, setCurrentMinMax] = React.useState({
+    max: "",
+    min: ""
+  })
 
   const handleInputChange = React.useCallback((e) => {
     setSearchInput(e.target.value);
@@ -67,12 +72,16 @@ function Summary(props) {
   };
 
   React.useEffect(() => {
-    if (props.weather) {  
+    if (props.weather) {
       updateForecastData(props.weather.fourDayForecast);
+      setCurrentMinMax({
+        max : props.weather.openWeatherData.main.temp_max.toFixed(),
+        min : props.weather.openWeatherData.main.temp_min.toFixed()
+      })
+    
     }
   }, [props.weather]);
 
-  console.log(forecastData);
 
   return (
     <div className="summary">
@@ -122,10 +131,7 @@ function Summary(props) {
 
             <div className="weather_icon_container flex">
               {forecastData.condition_text.map((data, index) => (
-                <WeatherICON 
-                key={index}
-                condition_text = {data}
-                />
+                <WeatherICON key={index} condition_text={data} />
               ))}
             </div>
 
@@ -160,53 +166,21 @@ function Summary(props) {
 
             <div className="flex" style={{ gap: "2rem" }}>
               <p style={{ color: "#9fb77b", fontSize: "0.9rem" }}>
-                Highest temp 8 &deg;C
+                Highest temp {currentMinMax.max}&deg;C
               </p>
               <p style={{ color: "#a4acd0", fontSize: "0.9rem" }}>
-                Lowest temp -6 &deg;C
+                Lowest temp {currentMinMax.min}&deg;C
               </p>
             </div>
 
-            <div className="dropdown">
-              <button className="dropbtn">
-                Today
-                <span className="dropdown-icon">
-                  <i className="fa-solid fa-caret-down"></i>
-                </span>
-              </button>
-              <div className="dropdown-content" id="myDropdown">
-                <a href="#">Item 1</a>
-                <a href="#">Item 2</a>
-                <a href="#">Item 3</a>
-              </div>
-            </div>
+              
+            <p>Today</p>
           </div>
 
           <div className="chart--body">
-            <div className="forecast--chart">
-              <table className="charts-css line show-labels hide-data">
-                <caption>Weather Forecast Chart</caption>
-
-                <tbody>
-                  <tr>
-                    <th scope="row">10 am</th>
-                    <td style={{ "--start": "0.2", "--end": "0.5" }}>Data</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">11 am</th>
-                    <td style={{ "--start": "0.5", "--end": "0.35" }}>Data</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">12 pm</th>
-                    <td style={{ "--start": "0.35", "--end": "0.25" }}>Data</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1 pm</th>
-                    <td style={{ "--start": "0.25", "--end": "0.15" }}>Data</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Chart
+              futureHoursData = {props.futureHoursData}
+            />
           </div>
         </div>
       </div>
