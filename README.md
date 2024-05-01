@@ -11,9 +11,8 @@ Welcome to the Awesome Weather App repository! This React-based weather app allo
 
 ## Getting Started
 
-1. Clone this repository to your local machine:
-
 ```bash
+1. Clone this repository to your local machine:
 git clone https://github.com/your-username/weather-app.git
 
 2. Navigate to the project display
