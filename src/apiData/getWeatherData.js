@@ -37,7 +37,7 @@ async function fetchHourlyForecastFromWeatherAPI(cityName) {
 // Weather API --- Fetches only 4 day weather data
 async function fetchFourDayForecastFromWeatherAPI(cityName) {
   try {
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApi}&q=${cityName}&days=4&aqi=no&alerts=no`);
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApi}&q=${cityName}&days=5&aqi=no&alerts=no`);
     const data = await response.json();
     return data.forecast.forecastday;
   } catch (error) {

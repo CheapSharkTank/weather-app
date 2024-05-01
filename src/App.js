@@ -36,14 +36,16 @@ function App() {
 
    return (
     <div className="container flex">
+      <Feature 
+        weather = {weather}
+      />
+
       <Summary 
         query = {query}
         setQuery = {setQuery}
-      />
-      <Feature 
         weather = {weather}
-        setWeather = {setWeather}
       />
+
     </div>
   );
 }
