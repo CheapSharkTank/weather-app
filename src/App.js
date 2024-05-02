@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Summary from "./components/summary";
 import Feature from "./components/feature";
 
-
 // importing styles
 import "./style/App.css";
 import "./style/summary.css";
@@ -16,11 +15,9 @@ import { fetchDataFromAPIs } from "./apiData/getWeatherData";
 function App() {
   const [query, setQuery] = React.useState("Dhaka");
   const [weather, setWeather] = React.useState(null);
-  
+
   const [futureHoursData, setFutureHoursData] = useState([]);
   const [rainChances, setRainChances] = useState([]);
-
-
 
   useEffect(() => {
     async function fetchData() {
@@ -35,34 +32,24 @@ function App() {
     fetchData(); // Call the fetchData function when component mounts
   }, [query]);
 
-
-
-
-
-   return (
+  return (
     <div className="container flex">
-      <Feature 
-        weather = {weather}
-
-        futureHoursData = {futureHoursData}
-        setFutureHoursData = {setFutureHoursData}
-
-        rainChances = {rainChances}
-        setRainChances = {setRainChances}
+      <Feature
+        weather={weather}
+        futureHoursData={futureHoursData}
+        setFutureHoursData={setFutureHoursData}
+        rainChances={rainChances}
+        setRainChances={setRainChances}
       />
-
-      <Summary 
-        query = {query}
-        setQuery = {setQuery}
-        weather = {weather}
-
-        futureHoursData = {futureHoursData}
-        rainChances = {rainChances}
+      <Summary
+        query={query}
+        setQuery={setQuery}
+        weather={weather}
+        futureHoursData={futureHoursData}
+        rainChances={rainChances}
       />
-
     </div>
   );
 }
 
 export default App;
-
